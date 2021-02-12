@@ -35,7 +35,8 @@ class SnakeControl extends React.Component {
       this.setState({
         snakeListVisible: true,
         snakeFormVisible: false,
-        snakeDetailsVisible: false
+        snakeDetailsVisible: false,
+        selectedSnake: null
       });
     }
   }
@@ -46,6 +47,11 @@ class SnakeControl extends React.Component {
       masterSnakeList: newMasterSnakeList,
       formVisible: false
     });
+  }
+
+  handleChangingSelectedSnake = (id) => {
+    const selectedSnake = this.state.masterSnakeList.filter(snake => snake.id === id)[0];
+    this.setState({selectedSnake: selectedSnake});
   }
 
   render() {
