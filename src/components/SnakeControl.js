@@ -1,6 +1,6 @@
-import React from "react";6
-import SnakeForm from "SnakeForm";
-import SnakeList from "SnakeList";
+import React from "react";
+import SnakeForm from "./SnakeForm";
+import SnakeList from "./SnakeList";
 
 
 class SnakeControl extends React.Component {
@@ -61,6 +61,17 @@ class SnakeControl extends React.Component {
     if (this.state.snakeListVisible) {
       currentlyVisibleState = <SnakeList snakeList = {this.state.masterSnakeList} onSnakeSelection = {this.handleChangingSelectedSnake} />;
       buttonText = "Add Snake Species to Inventory";
+    } else if (this.state.selectedTicket != null) {
+      currentlyVisibleState =
+      <snakeDetails
+      snake = {this.state.selectedSnake} />
+      buttonText = "Return to Snake List";
+      
+    } else if (this.snakeFormVisible) {
+      currentlyVisibleState = <SnakeForm onNewSnakeCreation = {this.handleAddingNewSnakeToList} />;
+      buttonText = "Return to Ticket List";
+    } else {
+      
     }
 
     return (

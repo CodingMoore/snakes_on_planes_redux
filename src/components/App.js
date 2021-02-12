@@ -1,5 +1,6 @@
 import React from "react";
-import SnakeControl from "SnakeControl";
+import Header from "./Header"
+import SnakeControl from "./SnakeControl";
 
 function App() {
   return (

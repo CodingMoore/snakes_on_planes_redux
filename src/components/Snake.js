@@ -7,7 +7,7 @@ function Snake(props) {
       <div onClick = {() => props.whenSnakeClicked(props.id)}>
         <h3>{props.species}</h3>
         <h3>{props.origin}</h3>
-        <h3>{props}.temperment</h3>
+        <h3>{props.temperment}</h3>
         <h3>{props.lethality}</h3>
         <hr/>
       </div>

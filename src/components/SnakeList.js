@@ -26,4 +26,4 @@ SnakeList.propTypes = {
   onSnakeSelection: PropTypes.func
 };
 
-export default TicketList;
+export default SnakeList;
