@@ -45,6 +45,7 @@ class SnakeControl extends React.Component {
     const newMasterSnakeList = this.state.masterSnakeList.concat(newSnake);
     this.setState({
       masterSnakeList: newMasterSnakeList,
+      snakeListVisible: true,
       newSnakeFormVisible: false
     });
   }

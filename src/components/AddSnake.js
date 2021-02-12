@@ -5,7 +5,6 @@ import SnakeForm from "./SnakeForm";
 
 function AddSnake(props) {
   function handleAddSnakeSubmission(event) {
-    console.log(event.target.species);
     event.preventDefault();
     props.onNewSnakeCreation({
       species: event.target.species.value,
