@@ -1,5 +1,5 @@
 import React from "react";
-import SnakeForm from "./SnakeForm";
+import AddSnake from "./AddSnake";
 import SnakeList from "./SnakeList";
 
 
@@ -11,7 +11,7 @@ class SnakeControl extends React.Component {
       masterSnakeList: [],
       selectedSnake: null,
       snakeListVisible: true,
-      snakeFormVisible: false,
+      newSnakeFormVisible: false,
       snakeDetailsVisible: false
     };
   }
@@ -22,19 +22,19 @@ class SnakeControl extends React.Component {
     if (this.state.snakeListVisible === true && this.state.selectedSnake === null) {
       this.setState({
         snakeListVisible: false,
-        snakeFormVisible: true,
+        newSnakeFormVisible: true,
         snakeDetailsVisible: false
       });
-    } else if (this.state.snakeFormVisible === true && this.state.selectedSnake === null) {
+    } else if (this.state.newSnakeFormVisible === true && this.state.selectedSnake === null) {
       this.setState({
         snakeListVisible: true,
-        snakeFormVisible: false,
+        newSnakeFormVisible: false,
         snakeDetailsVisible: false
       });
     } else { //else if (this.state.selectedSnake != null)
       this.setState({
         snakeListVisible: true,
-        snakeFormVisible: false,
+        newSnakeFormVisible: false,
         snakeDetailsVisible: false,
         selectedSnake: null
       });
@@ -45,7 +45,7 @@ class SnakeControl extends React.Component {
     const newMasterSnakeList = this.state.masterSnakeList.concat(newSnake);
     this.setState({
       masterSnakeList: newMasterSnakeList,
-      formVisible: false
+      newSnakeFormVisible: false
     });
   }
 
@@ -67,8 +67,8 @@ class SnakeControl extends React.Component {
       snake = {this.state.selectedSnake} />
       buttonText = "Return to Snake List";
       
-    } else if (this.snakeFormVisible) {
-      currentlyVisibleState = <SnakeForm onNewSnakeCreation = {this.handleAddingNewSnakeToList} />;
+    } else if (this.state.newSnakeFormVisible) {
+      currentlyVisibleState = <AddSnake onNewSnakeCreation = {this.handleAddingNewSnakeToList} />;
       buttonText = "Return to Ticket List";
     } else {
       

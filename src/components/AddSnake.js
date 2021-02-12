@@ -4,9 +4,10 @@ import PropTypes from "prop-types";
 import SnakeForm from "./SnakeForm";
 
 function AddSnake(props) {
-  function handleNewSnakeFformSubmission(event) {
+  function handleAddSnakeSubmission(event) {
+    console.log(event.target.species);
     event.preventDefault();
-    props.onNewTicketCreation({
+    props.onNewSnakeCreation({
       species: event.target.species.value,
       origin: event.target.origin.value,
       termperment: event.target.temperment.value,
@@ -17,13 +18,15 @@ function AddSnake(props) {
   return (
     <React.Fragment>
       <SnakeForm
-      formSubmissionHandler = {handleNewSnakeFormSubmission}
-      buttonText = "Add" />
+        formSubmissionHandler = {handleAddSnakeSubmission}
+        buttonText = "Add" />
     </React.Fragment>
   );
 
-  AddSnake.propType = {
-    onNewSnakeCreation: PropTypes.func
-  };
-  
 }
+
+AddSnake.propType = {
+  onNewSnakeCreation: PropTypes.func
+};
+
+export default AddSnake;
