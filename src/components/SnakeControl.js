@@ -17,7 +17,7 @@ class SnakeControl extends React.Component {
 
     return (
       <React.Fragment>
-
+        <SnakeList />
       </React.Fragment>  
     );
   }
