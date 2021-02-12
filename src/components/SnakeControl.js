@@ -22,11 +22,14 @@ class SnakeControl extends React.Component {
 
   render() {
     //If else conditionals
+    let currentlyVisibleState = null;
+    let buttonText = null;
 
 
     return (
       <React.Fragment>
-        <SnakeList />
+        {currentlyVisibleState}
+
       </React.Fragment>  
     );
   }
