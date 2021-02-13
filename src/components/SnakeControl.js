@@ -95,6 +95,8 @@ class SnakeControl extends React.Component {
     } else if (this.state.newSnakeFormVisible) {
       currentlyVisibleState = <AddSnake onNewSnakeCreation = {this.handleAddingNewSnakeToList} />;
       buttonText = "Return to Ticket List";
+    } else if (this.state.snakeDetailsVisible) {
+      
     } else {
       
     }
