@@ -1,6 +1,7 @@
 import React from "react";
 import AddSnake from "./AddSnake";
 import SnakeList from "./SnakeList";
+import SnakeDetails from "./SnakeDetails";
 
 
 class SnakeControl extends React.Component {
@@ -45,14 +46,33 @@ class SnakeControl extends React.Component {
     const newMasterSnakeList = this.state.masterSnakeList.concat(newSnake);
     this.setState({
       masterSnakeList: newMasterSnakeList,
+      selectedSnake: null,
       snakeListVisible: true,
-      newSnakeFormVisible: false
+      newSnakeFormVisible: false,
+      snakeDetailsVisible: false
     });
   }
 
   handleChangingSelectedSnake = (id) => {
     const selectedSnake = this.state.masterSnakeList.filter(snake => snake.id === id)[0];
-    this.setState({selectedSnake: selectedSnake});
+    this.setState({
+      selectedSnake: selectedSnake,
+      snakeListVisible: false,
+      newSnakeFormVisible: false,
+      snakeDetailsVisible: true
+    });
+  }
+
+  handleDeletingSnakeFromList = (id) => {
+    const newMasterSnakeList = this.state.masterSnakeList.filter(snake => snake.id !== id);
+    this.setState({
+      masterSnakeList: newMasterSnakeList,
+      selectedSnake: null,
+      snakeListVisible: true,
+      newSnakeFormVisible: false,
+      snakeDetailsVisible: false
+    });
+
   }
 
   render() {
@@ -61,10 +81,14 @@ class SnakeControl extends React.Component {
     let buttonText = null;
     if (this.state.snakeListVisible) {
       currentlyVisibleState = <SnakeList snakeList = {this.state.masterSnakeList} onSnakeSelection = {this.handleChangingSelectedSnake} />;
+      for (let i = 0; i < this.state.masterSnakeList.length; i++) {
+        console.log(this.state.masterSnakeList[i].id);
+        console.log(this.state.masterSnakeList.selectedSnake);
+      };
       buttonText = "Add Snake Species to Inventory";
-    } else if (this.state.selectedTicket != null) {
+    } else if (this.state.selectedSnake != null) {
       currentlyVisibleState =
-      <snakeDetails
+      <SnakeDetails
       snake = {this.state.selectedSnake} />
       buttonText = "Return to Snake List";
       

@@ -9,7 +9,7 @@ function AddSnake(props) {
     props.onNewSnakeCreation({
       species: event.target.species.value,
       origin: event.target.origin.value,
-      termperment: event.target.temperment.value,
+      temperment: event.target.temperment.value,
       lethality: event.target.lethality.value,
       id: v4()
     });
