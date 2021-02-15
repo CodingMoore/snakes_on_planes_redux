@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function SnakeDetails(props) {
-  const { snake, onClickingDelete } = props;
+  const { snake, onClickingDelete, onClickingEdit } = props;
 
   return (
     <React.Fragment>
@@ -11,7 +11,7 @@ function SnakeDetails(props) {
       <h3>{snake.origin}</h3>
       <h3>{snake.temperment}</h3>
       <h3>{snake.lethality}</h3>
-      <button onClick = { props.onClickingEdit }>Update Snake Details</button>
+      <button onClick = { () => onClickingEdit(snake.id) }>Update Snake Details</button>
       <button onClick = { () => onClickingDelete(snake.id) }>Delete Snake</button>
       <hr/>
     </React.Fragment>

@@ -1,0 +1,30 @@
+import React from "react";
+import PropTypes from "prop-types";
+import SnakeForm from "./SnakeForm";
+
+function EditSnake(props) {
+  function handleEditSnakeSubmission(event) {
+    event.preventDefault();
+    props.onSnakeEdit({
+      species: event.target.species.value,
+      origin: event.target.origin.value,
+      temperment: event.target.temperment.value,
+      lethality: event.target.lethality.value
+    });
+  }
+  return (
+    <React.Fragment>
+      <h1>Edit Page</h1>
+      <SnakeForm
+        formSubmissionHandler = {handleEditSnakeSubmission}
+        buttonText = "Edit" />
+    </React.Fragment>
+  );
+
+}
+
+EditSnake.propType = {
+  onSnakeEdit: PropTypes.func
+};
+
+export default EditSnake;
