@@ -10,10 +10,11 @@ function SnakeList(props) {
       {props.snakeList.map((snake) => 
         <Snake
           whenSnakeClicked = { props.onSnakeSelection }
-          species = {snake.species}
-          origin = {snake.origin}
-          temperment = {snake.temperment}
-          lethality = {snake.lethality}
+          species = {"Species - " + snake.species}
+          origin = {"Origin - " + snake.origin}
+          temperment = {"Temperment - " + snake.temperment}
+          lethality = {"Lethality - " + snake.lethality}
+          inventory = {"Inventory - " + snake.inventory}
           id = {snake.id}
           key = {snake.id}/>
         )}

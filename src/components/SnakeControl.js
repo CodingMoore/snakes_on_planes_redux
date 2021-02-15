@@ -19,8 +19,6 @@ class SnakeControl extends React.Component {
     };
   }
 
-  //handleTaskFunctions
-
   handleClick = () => {
     if (this.state.snakeListVisible === true) {
       this.setState({
@@ -44,9 +42,8 @@ class SnakeControl extends React.Component {
       snakeDetailsVisible: true,
       snakeEditVisible: false
       });
-    } else if (this.state.selectedSnake !== null) { //else if (this.state.selectedSnake != null)
+    } else if (this.state.selectedSnake !== null) {
       this.setState({
-        // selectedSnake: null,
         snakeListVisible: true,
         newSnakeFormVisible: false,
         snakeDetailsVisible: false,
@@ -104,10 +101,7 @@ class SnakeControl extends React.Component {
   }
 
   handleEditingClick = (id) => {
-    // const newMasterSnakeList = this.state.masterSnakeList.filter(snake => snake.id !== id);
     this.setState({
-      // masterSnakeList: newMasterSnakeList,
-      // selectedSnake: null,
       snakeListVisible: false,
       newSnakeFormVisible: false,
       snakeDetailsVisible: false,
@@ -116,7 +110,6 @@ class SnakeControl extends React.Component {
   }
 
   render() {
-    //If else conditionals
     let currentlyVisibleState = null;
     let buttonText = null;
     if (this.state.snakeListVisible) {

@@ -11,6 +11,7 @@ function AddSnake(props) {
       origin: event.target.origin.value,
       temperment: event.target.temperment.value,
       lethality: event.target.lethality.value,
+      inventory: 0,
       id: v4()
     });
   }
