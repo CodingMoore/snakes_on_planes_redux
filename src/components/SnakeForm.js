@@ -19,8 +19,8 @@ function SnakeForm(props) {
           placeholder = "Description" />
         <input
           type = "text"
-          name = "lethality"
-          placeholder = "Lethality" />
+          name = "danger"
+          placeholder = "Danger" />
         <button type = "submit"> {props.buttonText}</button>
       </form>
     </React.Fragment>

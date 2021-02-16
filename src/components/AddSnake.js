@@ -10,7 +10,7 @@ function AddSnake(props) {
       species: event.target.species.value,
       nativeTo: event.target.nativeTo.value,
       description: event.target.description.value,
-      lethality: event.target.lethality.value,
+      danger: event.target.danger.value,
       inventory: 0,
       id: v4()
     });

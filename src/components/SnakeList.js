@@ -14,7 +14,7 @@ function SnakeList(props) {
           species = {"Species - " + snake.species}
           nativeTo = {"Native To - " + snake.nativeTo}
           description = {"Description - " + snake.description}
-          lethality = {"Lethality - " + snake.lethality}
+          danger = {"Danger - " + snake.danger}
           inventory = {"Inventory - " + snake.inventory}
           id = {snake.id}
           key = {snake.id} />

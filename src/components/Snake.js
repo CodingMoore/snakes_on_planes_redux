@@ -8,7 +8,7 @@ function Snake(props) {
         <h3>{props.species}</h3>
         <h3>{props.nativeTo}</h3>
         <h3>{props.description}</h3>
-        <h3>{props.lethality}</h3>
+        <h3>{props.danger}</h3>
         <h3>{props.inventory}</h3>
         <hr/>
       </div>

@@ -20,7 +20,7 @@ class SnakeControl extends React.Component {
           species: "Whoop-Asp",
           nativeTo: "Local Watering Holes",
           description: "Have chips on their 'shoulders'",
-          lethality: "They are only dangerous if you look at them 'funny'.",
+          danger: "They are only dangerous if you look at them 'funny'.",
           inventory: 144,
           id: 1
         },
@@ -28,7 +28,7 @@ class SnakeControl extends React.Component {
           species: "American Plissken",
           nativeTo: "You used to find them in New York and LA",
           description: "Has trouble with depth perception",
-          lethality: "Highly dangerous (and cynical)",
+          danger: "Highly dangerous (and cynical)",
           inventory: 144,
           id: 3
         },
@@ -36,7 +36,7 @@ class SnakeControl extends React.Component {
           species: "(gym)Rat-Snake",
           nativeTo: "Venice Beach",
           description: "'Do you even hiss Broa?'",
-          lethality: "Lady Killers",
+          danger: "Lady Killers",
           inventory: 144,
           id: 2
         },
@@ -44,7 +44,7 @@ class SnakeControl extends React.Component {
           species: "Kojiman Solid Snake",
           nativeTo: "Cardboard Boxes",
           description: "Can be identified by a grey band on its head",
-          lethality: "Extreme, known to hunt others of their own kind.",
+          danger: "Extreme, known to hunt others of their own kind.",
           inventory: 144,
           id: 4
         }
@@ -144,12 +144,12 @@ class SnakeControl extends React.Component {
 
   handleSnakeRestock = (id) => {
     const lowStockSnake = this.state.masterSnakeList.filter(snake => snake.id === id)[0];
-    const { species, nativeTo, description, lethality, inventory } = lowStockSnake;
+    const { species, nativeTo, description, danger, inventory } = lowStockSnake;
     const restockedSnake = {
       species: species,
       nativeTo: nativeTo,
       description: description,
-      lethality: lethality,
+      danger: danger,
       inventory: inventory + 144
     }
     const newMasterSnakeList = this.state.masterSnakeList.filter(snake => snake.id !== id).concat(restockedSnake);
@@ -160,13 +160,13 @@ class SnakeControl extends React.Component {
 
   handleClickingBuy = (id) => {
     const stockSnake = this.state.masterSnakeList.filter(snake => snake.id === id)[0];
-    const { species, nativeTo, description, lethality, inventory } = stockSnake;
+    const { species, nativeTo, description, danger, inventory } = stockSnake;
     if(inventory >= 12) {
       const purchasedSnake = {
         species: species,
         nativeTo: nativeTo,
         description: description,
-        lethality: lethality,
+        danger: danger,
         inventory: inventory - 12
       }
       const newMasterSnakeList = this.state.masterSnakeList.filter(snake => snake.id !== id).concat(purchasedSnake);

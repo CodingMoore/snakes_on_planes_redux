@@ -10,7 +10,7 @@ function SnakeDetails(props) {
       <h3>{"Species - " + snake.species}</h3>
       <h3>{"Native To - " + snake.nativeTo}</h3>
       <h3>{"Description - " + snake.description}</h3>
-      <h3>{"Lethality - " + snake.lethality}</h3>
+      <h3>{"Danger - " + snake.danger}</h3>
       <h3>{"Inventory - " + snake.inventory}</h3>
       <button onClick = { () => onClickingRestock(snake.id) }>Restock</button>
       <button onClick = { () => onClickingEdit(snake.id) }>Update Snake Details</button>
