@@ -44,7 +44,7 @@ class SnakeControl extends React.Component {
           species: "Kojiman Solid Snake",
           nativeTo: "Cardboard Boxes",
           description: "Can be identified by a grey band on its head",
-          lethality: "Exrteme, known to hunt others of their kind.",
+          lethality: "Extreme, known to hunt others of their kind.",
           inventory: 144,
           id: 4
         }
