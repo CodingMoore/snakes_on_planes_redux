@@ -19,32 +19,32 @@ class SnakeControl extends React.Component {
         {
           species: "Whoop-Asp",
           nativeTo: "Local Watering Holes",
-          description: "Has a chip on its 'shoulder'",
+          description: "Have chips on their 'shoulders'",
           lethality: "They are only dangerous if you look at them 'funny'.",
           inventory: 144,
           id: 1
         },
         {
-          species: "(gym)Rat-Snake",
-          nativeTo: "Venice Beach",
-          description: "'Do you even hiss Bro?'",
-          lethality: "Lady Killers",
-          inventory: 144,
-          id: 2
-        },
-        {
           species: "American Plissken",
-          nativeTo: "You used to find them in LA and New York",
+          nativeTo: "You used to find them in New York and LA",
           description: "Has trouble with depth perception",
           lethality: "Highly dangerous (and cynical)",
           inventory: 144,
           id: 3
         },
         {
+          species: "(gym)Rat-Snake",
+          nativeTo: "Venice Beach",
+          description: "'Do you even hiss Broa?'",
+          lethality: "Lady Killers",
+          inventory: 144,
+          id: 2
+        },
+        {
           species: "Kojiman Solid Snake",
           nativeTo: "Cardboard Boxes",
           description: "Can be identified by a grey band on its head",
-          lethality: "Extreme, known to hunt others of their kind.",
+          lethality: "Extreme, known to hunt others of their own kind.",
           inventory: 144,
           id: 4
         }
