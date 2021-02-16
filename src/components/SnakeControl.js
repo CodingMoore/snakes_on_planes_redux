@@ -10,12 +10,45 @@ class SnakeControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      masterSnakeList: [],
       selectedSnake: null,
       snakeListVisible: true,
       newSnakeFormVisible: false,
       snakeDetailsVisible: false,
-      snakeEditVisible: false
+      snakeEditVisible: false,
+      masterSnakeList: [
+        {
+          species: "Whoop-Asp",
+          nativeTo: "Local Watering Holes",
+          description: "Has a chip on its 'shoulder'",
+          lethality: "They are only dangerous if you look at them 'funny'.",
+          inventory: 144,
+          id: 1
+        },
+        {
+          species: "(gym)Rat-Snake",
+          nativeTo: "Venice Beach",
+          description: "'Do you even hiss Bro?'",
+          lethality: "Lady Killers",
+          inventory: 144,
+          id: 2
+        },
+        {
+          species: "American Plissken",
+          nativeTo: "You used to find them in LA and New York",
+          description: "Has trouble with depth perception",
+          lethality: "Highly dangerous (and cynical)",
+          inventory: 144,
+          id: 3
+        },
+        {
+          species: "Kojiman Solid Snake",
+          nativeTo: "Cardboard Boxes",
+          description: "Can be identified by a grey band on its head",
+          lethality: "Exrteme, known to hunt others of their kind.",
+          inventory: 144,
+          id: 4
+        }
+      ]
     };
   }
 
@@ -97,7 +130,7 @@ class SnakeControl extends React.Component {
       newSnakeFormVisible: false,
       snakeDetailsVisible: false,
       snakeEditVisible: false
-    })
+    });
   }
 
   handleEditingClick = (id) => {
@@ -109,15 +142,48 @@ class SnakeControl extends React.Component {
     });
   }
 
+  handleSnakeRestock = (id) => {
+    const lowStockSnake = this.state.masterSnakeList.filter(snake => snake.id === id)[0];
+    const { species, nativeTo, description, lethality, inventory } = lowStockSnake;
+    const restockedSnake = {
+      species: species,
+      nativeTo: nativeTo,
+      description: description,
+      lethality: lethality,
+      inventory: inventory + 144
+    }
+    const newMasterSnakeList = this.state.masterSnakeList.filter(snake => snake.id !== id).concat(restockedSnake);
+    this.setState({
+      masterSnakeList: newMasterSnakeList
+    });
+  }
+
+  handleClickingBuy = (id) => {
+    const stockSnake = this.state.masterSnakeList.filter(snake => snake.id === id)[0];
+    const { species, nativeTo, description, lethality, inventory } = stockSnake;
+    if(inventory >= 12) {
+      const purchasedSnake = {
+        species: species,
+        nativeTo: nativeTo,
+        description: description,
+        lethality: lethality,
+        inventory: inventory - 12
+      }
+      const newMasterSnakeList = this.state.masterSnakeList.filter(snake => snake.id !== id).concat(purchasedSnake);
+      this.setState({
+        masterSnakeList: newMasterSnakeList
+      });
+    } else {
+      alert(`${species} is out of stock!`);
+    }
+  }
+
   render() {
     let currentlyVisibleState = null;
     let buttonText = null;
     if (this.state.snakeListVisible) {
-      currentlyVisibleState = <SnakeList snakeList = {this.state.masterSnakeList} onSnakeSelection = {this.handleChangingSelectedSnake} />;
-      for (let i = 0; i < this.state.masterSnakeList.length; i++) {
-        console.log(this.state.masterSnakeList[i].id);
-        console.log(this.state.masterSnakeList.selectedSnake);
-      };
+      currentlyVisibleState = <SnakeList snakeList = {this.state.masterSnakeList} 
+      onSnakeSelection = {this.handleChangingSelectedSnake} onClickingBuy = {this.handleClickingBuy} />;
       buttonText = "Add Snake Species to Inventory";
     } else if (this.state.newSnakeFormVisible) {
       currentlyVisibleState = <AddSnake onNewSnakeCreation = {this.handleAddingNewSnakeToList} />;
@@ -128,7 +194,8 @@ class SnakeControl extends React.Component {
     } else if (this.state.selectedSnake != null) {
       currentlyVisibleState =
       <SnakeDetails
-      snake = {this.state.selectedSnake} 
+      snake = {this.state.selectedSnake}
+      onClickingRestock = {this.handleSnakeRestock}
       onClickingDelete = {this.handleDeletingSnakeFromList}
       onClickingEdit = {this.handleEditingClick} />
       buttonText = "Return to Snake List";

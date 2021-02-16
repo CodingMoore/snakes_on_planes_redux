@@ -8,8 +8,8 @@ function AddSnake(props) {
     event.preventDefault();
     props.onNewSnakeCreation({
       species: event.target.species.value,
-      origin: event.target.origin.value,
-      temperment: event.target.temperment.value,
+      nativeTo: event.target.nativeTo.value,
+      description: event.target.description.value,
       lethality: event.target.lethality.value,
       inventory: 0,
       id: v4()

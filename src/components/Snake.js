@@ -6,23 +6,26 @@ function Snake(props) {
     <React.Fragment>
       <div onClick = {() => props.whenSnakeClicked(props.id)}>
         <h3>{props.species}</h3>
-        <h3>{props.origin}</h3>
-        <h3>{props.temperment}</h3>
+        <h3>{props.nativeTo}</h3>
+        <h3>{props.description}</h3>
         <h3>{props.lethality}</h3>
         <h3>{props.inventory}</h3>
         <hr/>
       </div>
+      <hr/>
+      <button onClick = { () => props.whenBuyIsClicked(props.id) }>Buy (Sold by the Dozen)</button>
     </React.Fragment>
   );
 }
 
 Snake.propTypes = {
   species: PropTypes.string.isRequired,
-  origin: PropTypes.string.isRequired,
-  temperment: PropTypes.string.isRequired,
+  nativeTo: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
   lethality: PropTypes.string.isRequired,
   inventory: PropTypes.number,
   id: PropTypes.string,
+  whenBuyIsClicked: PropTypes.func,
   whenSnakeClicked: PropTypes.func
 };
 

@@ -10,13 +10,14 @@ function SnakeList(props) {
       {props.snakeList.map((snake) => 
         <Snake
           whenSnakeClicked = { props.onSnakeSelection }
+          whenBuyIsClicked = { props.onClickingBuy }
           species = {"Species - " + snake.species}
-          origin = {"Origin - " + snake.origin}
-          temperment = {"Temperment - " + snake.temperment}
+          nativeTo = {"Native To - " + snake.nativeTo}
+          description = {"Description - " + snake.description}
           lethality = {"Lethality - " + snake.lethality}
           inventory = {"Inventory - " + snake.inventory}
           id = {snake.id}
-          key = {snake.id}/>
+          key = {snake.id} />
         )}
     </React.Fragment>
   );
@@ -24,7 +25,8 @@ function SnakeList(props) {
 
 SnakeList.propTypes = {
   snakelist: PropTypes.array,
-  onSnakeSelection: PropTypes.func
+  onSnakeSelection: PropTypes.func,
+  onClickingBuy: PropTypes.func
 };
 
 export default SnakeList;

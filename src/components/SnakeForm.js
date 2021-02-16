@@ -11,12 +11,12 @@ function SnakeForm(props) {
           placeholder = "Species Name" />
         <input
           type = "text"
-          name = "origin"
-          placeholder = "Origin" />
+          name = "nativeTo"
+          placeholder = "Native To" />
         <input
           type = "text"
-          name = "temperment"
-          placeholder = "Temperment" />
+          name = "description"
+          placeholder = "Description" />
         <input
           type = "text"
           name = "lethality"
