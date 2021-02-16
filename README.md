@@ -54,7 +54,7 @@ A browser that can run HTML5 is required.
 
 ## **React Component Tree Diagram**
 
-
+![snakes on planes Diagram 1](./readmeAssets/snakes_on_plane-Diagram-1.PNG)
 
 ## **Known Bugs**
 When restocking a snake, the quantity value doesn't update on the details page automatically.
