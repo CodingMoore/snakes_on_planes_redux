@@ -150,7 +150,8 @@ class SnakeControl extends React.Component {
       nativeTo: nativeTo,
       description: description,
       danger: danger,
-      inventory: inventory + 144
+      inventory: inventory + 144,
+      id: id
     }
     const newMasterSnakeList = this.state.masterSnakeList.filter(snake => snake.id !== id).concat(restockedSnake);
     this.setState({
@@ -167,7 +168,8 @@ class SnakeControl extends React.Component {
         nativeTo: nativeTo,
         description: description,
         danger: danger,
-        inventory: inventory - 12
+        inventory: inventory - 12,
+        id: id
       }
       const newMasterSnakeList = this.state.masterSnakeList.filter(snake => snake.id !== id).concat(purchasedSnake);
       this.setState({
@@ -182,14 +184,23 @@ class SnakeControl extends React.Component {
     let currentlyVisibleState = null;
     let buttonText = null;
     if (this.state.snakeListVisible) {
-      currentlyVisibleState = <SnakeList snakeList = {this.state.masterSnakeList} 
-      onSnakeSelection = {this.handleChangingSelectedSnake} onClickingBuy = {this.handleClickingBuy} />;
+      currentlyVisibleState = 
+      <SnakeList 
+      snakeList = {this.state.masterSnakeList} 
+      onSnakeSelection = {this.handleChangingSelectedSnake} 
+      onClickingBuy = {this.handleClickingBuy} />;
+
+      this.state.masterSnakeList.forEach(snake => console.log(snake.id));
       buttonText = "Add Snake Species to Inventory";
     } else if (this.state.newSnakeFormVisible) {
-      currentlyVisibleState = <AddSnake onNewSnakeCreation = {this.handleAddingNewSnakeToList} />;
+      currentlyVisibleState =
+      <AddSnake 
+      onNewSnakeCreation = {this.handleAddingNewSnakeToList} />;
       buttonText = "Return to Snake List";
     } else if (this.state.snakeEditVisible) {
-      currentlyVisibleState = <EditSnake onSnakeEdit = {this.handleEditingSnake} />;
+      currentlyVisibleState = 
+      <EditSnake 
+      onSnakeEdit = {this.handleEditingSnake} />;
       buttonText = "Return to Snake Details";
     } else if (this.state.selectedSnake != null) {
       currentlyVisibleState =
