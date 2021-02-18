@@ -22,8 +22,8 @@ Snake.propTypes = {
   species: PropTypes.string.isRequired,
   nativeTo: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  lethality: PropTypes.string.isRequired,
-  inventory: PropTypes.number,
+  danger: PropTypes.string.isRequired,
+  inventory: PropTypes.string,
   id: PropTypes.string,
   whenBuyIsClicked: PropTypes.func,
   whenSnakeClicked: PropTypes.func

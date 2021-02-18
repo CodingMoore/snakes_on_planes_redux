@@ -22,7 +22,7 @@ class SnakeControl extends React.Component {
           description: "Have chips on their 'shoulders'",
           danger: "They are only dangerous if you look at them 'funny'.",
           inventory: 144,
-          id: 1
+          id: "1"
         },
         {
           species: "American Plissken",
@@ -30,7 +30,7 @@ class SnakeControl extends React.Component {
           description: "Has trouble with depth perception",
           danger: "Highly dangerous (and cynical)",
           inventory: 144,
-          id: 3
+          id: "3"
         },
         {
           species: "(gym)Rat-Snake",
@@ -38,7 +38,7 @@ class SnakeControl extends React.Component {
           description: "'Do you even hiss Broa?'",
           danger: "Lady Killers",
           inventory: 144,
-          id: 2
+          id: "2"
         },
         {
           species: "Kojiman Solid Snake",
@@ -46,7 +46,7 @@ class SnakeControl extends React.Component {
           description: "Can be identified by a grey band on its head",
           danger: "Extreme, known to hunt others of their own kind.",
           inventory: 144,
-          id: 4
+          id: "4"
         }
       ]
     };
@@ -189,8 +189,6 @@ class SnakeControl extends React.Component {
       snakeList = {this.state.masterSnakeList} 
       onSnakeSelection = {this.handleChangingSelectedSnake} 
       onClickingBuy = {this.handleClickingBuy} />;
-
-      this.state.masterSnakeList.forEach(snake => console.log(snake.id));
       buttonText = "Add Snake Species to Inventory";
     } else if (this.state.newSnakeFormVisible) {
       currentlyVisibleState =

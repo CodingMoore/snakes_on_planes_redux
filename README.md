@@ -20,7 +20,9 @@ Here are some user stories to get you started. The application should have the f
 * As a user, I want to be able to click a button next to a keg whenever I sell a pint of it. This should decrease the number of pints left by 1. Pints should not be able to go below 0.
 
 ## **Required for Use**
-A browser that can run HTML5 is required.
+* A browser that can run HTML5 is required.
+* Node.js (https://nodejs.org/en/)
+
 ## **Installation Instructions**
 **Option 1** (direct download)
 1) Copy and paste the following GitHub project link into your web browser's url bar and hit enter/return. https://github.com/RMGit-it/snakes_on_planes
@@ -60,6 +62,7 @@ A browser that can run HTML5 is required.
 When restocking a snake, the quantity value doesn't update on the details page automatically.
 ## **Technology Used**
 * HTML
+* Node.js
 * React
 * JavaScript
 * Bootstrap
