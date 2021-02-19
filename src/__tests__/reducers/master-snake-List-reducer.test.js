@@ -32,12 +32,12 @@ describe("masterSnakeListReducer", () => {
     expect(masterSnakeListReducer({}, action)).toEqual(
       {
         "ID Test": {
-        species: "Species Test",
-        nativeTo: "NativeTo Test",
-        description: "Description Test",
-        danger: "Danger Test",
-        inventory: "Inventory Test",
-        id: "ID Test"
+        species,
+        nativeTo,
+        description,
+        danger,
+        inventory,
+        id
         }
       }
     )
