@@ -3,7 +3,7 @@ import * as c from "./../actions/ActionTypes";
 export default (state = {}, action) => {
     return Object.assign({}, state, 
       {
-        X: {
+        1: {
           species: "Whoop-Asp",
           nativeTo: "Local Watering Holes",
           description: "Have chips on their 'shoulders'",
