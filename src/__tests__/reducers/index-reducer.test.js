@@ -3,7 +3,7 @@ import { createStore } from "redux";
 import masterSnakeListReducer from '../../reducers/master-snake-List-reducer';
 import * as c from "../../actions/ActionTypes";
 
-let store = creatStore(rootReducer);
+let store = createStore(rootReducer);
 
 describe("rootReducer", () => {
   
