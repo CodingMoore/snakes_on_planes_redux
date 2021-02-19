@@ -18,7 +18,7 @@ describe("snakes_on_planes actions", () => {
       description: "Test description",
       danger: "Test danger",
       inventory: "Test inventory",
-      id: "Test"
+      id: "Test id"
     });
   });
 });
