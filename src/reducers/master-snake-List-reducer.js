@@ -9,7 +9,7 @@ export default (state = {}, action) => {
         description,
         danger,
         inventory,
-        // id
+        id
       }
     });
   default:
