@@ -63,7 +63,7 @@ describe("masterSnakeListReducer", () => {
   });
 
   test("Should successfully delete the specified snake from the masterSnakeList", () => {
-    const action = {
+    action = {
       type: "DELETE_SNAKE",
       id: 1
     }
@@ -78,8 +78,7 @@ describe("masterSnakeListReducer", () => {
           inventory: "Inventory 2",
           id: 2
           }
-      }
-    )
-  })
+      });
+  });
 
 });
