@@ -3,7 +3,9 @@ import AddSnake from "./AddSnake";
 import SnakeList from "./SnakeList";
 import SnakeDetails from "./SnakeDetails";
 import EditSnake from "./EditSnake";
-
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import * as a from "./../actions";
 
 class SnakeControl extends React.Component {
 
@@ -15,7 +17,8 @@ class SnakeControl extends React.Component {
       newSnakeFormVisible: false,
       snakeDetailsVisible: false,
       snakeEditVisible: false,
-      masterSnakeList: [
+      masterSnakeList: 
+      [
         {
           species: "Whoop-Asp",
           nativeTo: "Local Watering Holes",
@@ -51,6 +54,7 @@ class SnakeControl extends React.Component {
       ]
     };
   }
+
 
   handleClick = () => {
     if (this.state.snakeListVisible === true) {
@@ -222,6 +226,18 @@ class SnakeControl extends React.Component {
 
 
 }
+
+SnakeControl.propTypes = {
+  masterSnakeList: PropTypes.object
+}
+
+const mapStateToProps = state => {
+  return {
+    masterSnakeList: state.masterSnakeList
+  }
+}
+
+SnakeControl = connect(mapStateToProps)(SnakeControl);
 
 export default SnakeControl;
 
