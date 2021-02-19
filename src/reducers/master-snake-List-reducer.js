@@ -13,7 +13,9 @@ export default (state = {}, action) => {
       }
     });
   case "DELETE_SNAKE":
-    return state;
+    let newState = { ...state };
+    delete newState[id];
+    return newState;
   default:
     return state;
   }
