@@ -12,3 +12,10 @@ export const addSnake = (snake) => {
     id
   }
 };
+
+export const deleteSnake = id => {
+  return {
+    type: c.DELETE_SNAKE,
+    id
+  }
+};

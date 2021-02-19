@@ -21,4 +21,13 @@ describe("snakes_on_planes actions", () => {
       id: "Test id"
     });
   });
+
+  it("deleteSnake should create a 'DELETE_SNAKE' action", ()=> {
+    expect(actions.deleteSnake(1)).toEqual(
+      {
+      type: c.DELETE_SNAKE,
+      id: 1
+    })
+  })
+
 });
