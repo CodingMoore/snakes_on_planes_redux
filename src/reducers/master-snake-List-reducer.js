@@ -1,5 +1,5 @@
 export default (state = {}, action) => {
-  const { species, nativeTo, description, danger, inventory } = action;
+  const { species, nativeTo, description, danger, inventory, id } = action;
   switch (action.type) {
   case "ADD_SNAKE":
     return Object.assign({}, state, {
@@ -8,7 +8,8 @@ export default (state = {}, action) => {
         nativeTo,
         description,
         danger,
-        inventory
+        inventory,
+        id
       }
     });
   default:
