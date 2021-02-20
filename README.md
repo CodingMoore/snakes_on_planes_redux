@@ -1,23 +1,21 @@
 # **snakes_on_planes_redux**
-Project Initiated: 2021-02-12<br>
-Updated: 2021-02-16
+Project Initiated: 2021-02-19<br>
+Updated: 2021-02-20
 
 ## **Project Description**
-This project will use allow the user to "buy" snakes for their planes.  New Snakes can be added, edited, deleted, and restocked.
+This project will use allow the user to "buy" snakes for their planes.  New Snakes can be added, edited, deleted, and restocked.  This is an updated version of snakes_on_planes that incorporates Redux. 
 
 Coding Prompt:
 
-This will be a two-week project. Spend today building a tap room in React where a bar or kombucha store can track their kegs. This could also be a soda fountain __or another kind of tracker__ - as long as you're able to track the remaining amount and meet the objectives, __you can be creative with this prompt.__
+This is the second part of a two-section project. At the end of the last section's independent project, you built a tap room using local and shared state in React. For this independent project, you will update your application to incorporate Redux.  The first part of the project and its prompt can be found [here](https://github.com/RMGit-it/snakes_on_planes).
 
-Before getting started, plan out your application and draw a component tree or component diagram that shows the structure of your components. This is a requirement for the project and should be included in your README. You may draw the structure on a piece of paper and take a picture of it or use an application like https://www.draw.io/.
+Before getting started, clone or fork the repo of the project you completed at the end of the last section.
 
-Here are some user stories to get you started. The application should have the following functionality:
+Here are the requirements for the refactor:
 
-* As a user, I want to see a list/menu of all available kegs. For each keg, I want to see its name, brand, price and alcoholContent (or perhaps something like flavor for a kombucha store).
-* As a user, I want to submit a form to add a new keg to a list.
-* As a user, I want to be able to click on a keg to see its detail page.
-* As a user, I want to see how many pints are left in a keg. Hint: A full keg has roughly 124 pints.
-* As a user, I want to be able to click a button next to a keg whenever I sell a pint of it. This should decrease the number of pints left by 1. Pints should not be able to go below 0.
+* Shared state in your application should be handled by Redux.
+* All reducers should be tested thoroughly, and all tests must be passing.
+* Action creators and constants should be used.
 
 ## **Required for Use**
 * A browser that can run HTML5 is required.
@@ -59,11 +57,13 @@ Here are some user stories to get you started. The application should have the f
 ![snakes on planes Diagram 1](./readmeAssets/snakes_on_plane-Diagram-1.PNG)
 
 ## **Known Bugs**
-When restocking a snake, the quantity value doesn't update on the details page automatically.
+When restocking a snake, the quantity value displayed is inaccurate.
 ## **Technology Used**
 * HTML
 * Node.js
 * React
+* Redux
+* React - Redux
 * JavaScript
 * Bootstrap
 * CSS

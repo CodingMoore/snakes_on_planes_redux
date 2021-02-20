@@ -7,6 +7,8 @@ let store = createStore(rootReducer);
 
 describe("rootReducer", () => {
   
+  // DEPRICATED TEST//////
+  
   // test("Should return default state if no action type is input", () => {
   //   expect(rootReducer({}, { type: null })).toEqual({
   //     masterSnakeList: {}

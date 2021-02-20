@@ -68,9 +68,9 @@ class SnakeControl extends React.Component {
   }
 
   handleChangingSelectedSnake = (id) => {
-    const selectedSnake = this.props.masterSnakeList[id];
+    const newSelectedSnake = this.props.masterSnakeList[id];
     this.setState({
-      selectedSnake: selectedSnake,
+      selectedSnake: newSelectedSnake,
       snakeListVisible: false,
       newSnakeFormVisible: false,
       snakeDetailsVisible: true,
@@ -127,6 +127,8 @@ class SnakeControl extends React.Component {
     const { dispatch } = this.props;
     const action = a.addSnake(restockedSnake);
     dispatch(action);
+    console.log(this.props.masterSnakeList[id].inventory);
+    this.handleChangingSelectedSnake(this.props.masterSnakeList[id].id);
   }
 
   handleClickingBuy = (id) => {
