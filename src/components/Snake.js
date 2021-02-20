@@ -10,10 +10,9 @@ function Snake(props) {
         <h3>{props.description}</h3>
         <h3>{props.danger}</h3>
         <h3>{props.inventory}</h3>
-        <hr/>
       </div>
-      <hr/>
       <button onClick = { () => props.whenBuyIsClicked(props.id) }>Buy (Sold by the Dozen)</button>
+      <hr/>
     </React.Fragment>
   );
 }

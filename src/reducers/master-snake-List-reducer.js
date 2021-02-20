@@ -38,7 +38,6 @@ export default (state = initialState, action) => {
   const { species, nativeTo, description, danger, inventory, id } = action;
   switch (action.type) {
   case "ADD_SNAKE":
-    console.log(inventory);
     return Object.assign({}, state, {
       [id]: {
         species,

@@ -127,7 +127,6 @@ class SnakeControl extends React.Component {
     const { dispatch } = this.props;
     const action = a.addSnake(restockedSnake);
     dispatch(action);
-    console.log(this.props.masterSnakeList[id].inventory);
     this.handleChangingSelectedSnake(this.props.masterSnakeList[id].id);
   }
 
