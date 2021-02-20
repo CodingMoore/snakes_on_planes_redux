@@ -14,7 +14,7 @@ function EditSnake(props) {
   }
   return (
     <React.Fragment>
-      <h1>Edit Page</h1>
+      <h1>Edit Snake</h1>
       <SnakeForm
         formSubmissionHandler = {handleEditSnakeSubmission}
         buttonText = "Edit" />
