@@ -190,7 +190,7 @@ class SnakeControl extends React.Component {
         id: id
       }
       // const newMasterSnakeList = this.state.masterSnakeList.filter(snake => snake.id !== id).concat(purchasedSnake);
-      const newMasterSnakeList = this.props.masterSnakeList[id];
+      // const newMasterSnakeList = this.props.masterSnakeList[id];
       // this.setState({
       //   // masterSnakeList: newMasterSnakeList
       // });

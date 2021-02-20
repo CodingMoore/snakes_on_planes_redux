@@ -1,5 +1,6 @@
-export default (state = {}, action) => {
-    return Object.assign({}, state, 
+// export default (state = {}, action) => {
+//     return Object.assign({}, state, 
+const initialState =
       {
         1: {
           species: "Whoop-Asp",
@@ -33,5 +34,7 @@ export default (state = {}, action) => {
           inventory: 144,
           id: "4"
         }
-    });
-};
+    }
+//     );
+// };
+export default initialState;
