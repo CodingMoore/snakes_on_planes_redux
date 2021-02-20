@@ -17,41 +17,41 @@ class SnakeControl extends React.Component {
       newSnakeFormVisible: false,
       snakeDetailsVisible: false,
       snakeEditVisible: false,
-      masterSnakeList: 
-      [
-        {
-          species: "Whoop-Asp",
-          nativeTo: "Local Watering Holes",
-          description: "Have chips on their 'shoulders'",
-          danger: "They are only dangerous if you look at them 'funny'.",
-          inventory: 144,
-          id: "1"
-        },
-        {
-          species: "American Plissken",
-          nativeTo: "You used to find them in New York and LA",
-          description: "Has trouble with depth perception",
-          danger: "Highly dangerous (and cynical)",
-          inventory: 144,
-          id: "3"
-        },
-        {
-          species: "(gym)Rat-Snake",
-          nativeTo: "Venice Beach",
-          description: "'Do you even hiss Broa?'",
-          danger: "Lady Killers",
-          inventory: 144,
-          id: "2"
-        },
-        {
-          species: "Kojiman Solid Snake",
-          nativeTo: "Cardboard Boxes",
-          description: "Can be identified by a grey band on its head",
-          danger: "Extreme, known to hunt others of their own kind.",
-          inventory: 144,
-          id: "4"
-        }
-      ]
+      // masterSnakeList: 
+      // [
+      //   {
+      //     species: "Whoop-Asp",
+      //     nativeTo: "Local Watering Holes",
+      //     description: "Have chips on their 'shoulders'",
+      //     danger: "They are only dangerous if you look at them 'funny'.",
+      //     inventory: 144,
+      //     id: "1"
+      //   },
+      //   {
+      //     species: "American Plissken",
+      //     nativeTo: "You used to find them in New York and LA",
+      //     description: "Has trouble with depth perception",
+      //     danger: "Highly dangerous (and cynical)",
+      //     inventory: 144,
+      //     id: "3"
+      //   },
+      //   {
+      //     species: "(gym)Rat-Snake",
+      //     nativeTo: "Venice Beach",
+      //     description: "'Do you even hiss Broa?'",
+      //     danger: "Lady Killers",
+      //     inventory: 144,
+      //     id: "2"
+      //   },
+      //   {
+      //     species: "Kojiman Solid Snake",
+      //     nativeTo: "Cardboard Boxes",
+      //     description: "Can be identified by a grey band on its head",
+      //     danger: "Extreme, known to hunt others of their own kind.",
+      //     inventory: 144,
+      //     id: "4"
+      //   }
+      // ]
     };
   }
 
@@ -90,19 +90,22 @@ class SnakeControl extends React.Component {
   }
 
   handleAddingNewSnakeToList = (newSnake) => {
-    const newMasterSnakeList = this.state.masterSnakeList.concat(newSnake);
+    // const newMasterSnakeList = this.props.masterSnakeList.concat(newSnake);
     this.setState({
-      masterSnakeList: newMasterSnakeList,
+      // masterSnakeList: newMasterSnakeList,
       selectedSnake: null,
       snakeListVisible: true,
       newSnakeFormVisible: false,
       snakeDetailsVisible: false,
       snakeEditVisible: false
     });
+    const { dispatch } = this.props;
+    const action = a.addSnake(newSnake);
+    dispatch(action);
   }
 
   handleChangingSelectedSnake = (id) => {
-    const selectedSnake = this.state.masterSnakeList.filter(snake => snake.id === id)[0];
+    const selectedSnake = this.props.masterSnakeList[id];
     this.setState({
       selectedSnake: selectedSnake,
       snakeListVisible: false,
@@ -113,28 +116,33 @@ class SnakeControl extends React.Component {
   }
 
   handleDeletingSnakeFromList = (id) => {
-    const newMasterSnakeList = this.state.masterSnakeList.filter(snake => snake.id !== id);
+    // const newMasterSnakeList = this.state.masterSnakeList.filter(snake => snake.id !== id);
+    const { dispatch } = this.props;
+    const action = a.deleteSnake(id);
+    dispatch(action);
     this.setState({
-      masterSnakeList: newMasterSnakeList,
+      // masterSnakeList: newMasterSnakeList,
       selectedSnake: null,
       snakeListVisible: true,
       newSnakeFormVisible: false,
       snakeDetailsVisible: false,
       snakeEditVisible: false
     });
-
   }
 
   handleEditingSnake = (updatedSnake) => {
-    const newMasterSnakeList = this.state.masterSnakeList.filter(snake => snake.id !== this.state.selectedSnake.id).concat(updatedSnake);
+    // const newMasterSnakeList = this.state.masterSnakeList.filter(snake => snake.id !== this.state.selectedSnake.id).concat(updatedSnake);
     this.setState({
-      masterSnakeList: newMasterSnakeList,
+      // masterSnakeList: newMasterSnakeList,
       selectedSnake: null,
       snakeListVisible: true,
       newSnakeFormVisible: false,
       snakeDetailsVisible: false,
       snakeEditVisible: false
     });
+    const { dispatch } = this.props;
+    const action = a.addSnake(updatedSnake);
+    dispatch(action);
   }
 
   handleEditingClick = (id) => {
@@ -147,7 +155,8 @@ class SnakeControl extends React.Component {
   }
 
   handleSnakeRestock = (id) => {
-    const lowStockSnake = this.state.masterSnakeList.filter(snake => snake.id === id)[0];
+    // const lowStockSnake = this.state.masterSnakeList.filter(snake => snake.id === id)[0];
+    const lowStockSnake = this.props.masterSnakeList[id];
     const { species, nativeTo, description, danger, inventory } = lowStockSnake;
     const restockedSnake = {
       species: species,
@@ -157,14 +166,19 @@ class SnakeControl extends React.Component {
       inventory: inventory + 144,
       id: id
     }
-    const newMasterSnakeList = this.state.masterSnakeList.filter(snake => snake.id !== id).concat(restockedSnake);
-    this.setState({
-      masterSnakeList: newMasterSnakeList
-    });
+    // const newMasterSnakeList = this.state.masterSnakeList.filter(snake => snake.id !== id).concat(restockedSnake);
+    // const newMasterSnakeList = this.props.masterSnakeList[id];
+    // this.setState({
+    //   masterSnakeList: newMasterSnakeList
+    // });
+    const { dispatch } = this.props;
+    const action = a.addSnake(restockedSnake);
+    dispatch(action);
   }
 
   handleClickingBuy = (id) => {
-    const stockSnake = this.state.masterSnakeList.filter(snake => snake.id === id)[0];
+    // const stockSnake = this.state.masterSnakeList.filter(snake => snake.id === id)[0];
+    const stockSnake = this.props.masterSnakeList[id];
     const { species, nativeTo, description, danger, inventory } = stockSnake;
     if(inventory >= 12) {
       const purchasedSnake = {
@@ -175,10 +189,14 @@ class SnakeControl extends React.Component {
         inventory: inventory - 12,
         id: id
       }
-      const newMasterSnakeList = this.state.masterSnakeList.filter(snake => snake.id !== id).concat(purchasedSnake);
-      this.setState({
-        masterSnakeList: newMasterSnakeList
-      });
+      // const newMasterSnakeList = this.state.masterSnakeList.filter(snake => snake.id !== id).concat(purchasedSnake);
+      const newMasterSnakeList = this.props.masterSnakeList[id];
+      // this.setState({
+      //   // masterSnakeList: newMasterSnakeList
+      // });
+      const { dispatch } = this.props;
+      const action = a.addSnake(purchasedSnake);
+      dispatch(action);
     } else {
       alert(`${species} is out of stock!`);
     }
@@ -188,9 +206,11 @@ class SnakeControl extends React.Component {
     let currentlyVisibleState = null;
     let buttonText = null;
     if (this.state.snakeListVisible) {
+      console.log("line 209 masterSnakeList", this.props.masterSnakeList);
       currentlyVisibleState = 
       <SnakeList 
-      snakeList = {this.state.masterSnakeList} 
+      // snakeList = {this.props.masterSnakeList}
+      snakeList = {this.props.masterSnakeList}
       onSnakeSelection = {this.handleChangingSelectedSnake} 
       onClickingBuy = {this.handleClickingBuy} />;
       buttonText = "Add Snake Species to Inventory";

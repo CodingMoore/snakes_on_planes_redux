@@ -8,7 +8,7 @@ function SnakeList(props) {
   return (
     <React.Fragment>
       <hr/>
-      {props.snakeList.map((snake) => 
+      {Object.values(props.snakeList).map((snake) => 
         <Snake
           whenSnakeClicked = { props.onSnakeSelection }
           whenBuyIsClicked = { props.onClickingBuy }
