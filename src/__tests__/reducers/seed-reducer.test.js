@@ -20,7 +20,7 @@ describe("seedReducer", () => {
           description: "Has trouble with depth perception",
           danger: "Highly dangerous (and cynical)",
           inventory: 144,
-          id: "3"
+          id: "2"
         },
         3: {
           species: "(gym)Rat-Snake",
@@ -28,7 +28,7 @@ describe("seedReducer", () => {
           description: "'Do you even hiss Broa?'",
           danger: "Lady Killers",
           inventory: 144,
-          id: "2"
+          id: "3"
         },
         4: {
           species: "Kojiman Solid Snake",

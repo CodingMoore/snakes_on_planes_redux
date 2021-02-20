@@ -1,6 +1,5 @@
-// export default (state = {}, action) => {
-//     return Object.assign({}, state, 
-const initialState =
+export default (state = {}, action) => {
+    return Object.assign({}, state, 
       {
         1: {
           species: "Whoop-Asp",
@@ -16,7 +15,7 @@ const initialState =
           description: "Has trouble with depth perception",
           danger: "Highly dangerous (and cynical)",
           inventory: 144,
-          id: "3"
+          id: "2"
         },
         3: {
           species: "(gym)Rat-Snake",
@@ -24,7 +23,7 @@ const initialState =
           description: "'Do you even hiss Broa?'",
           danger: "Lady Killers",
           inventory: 144,
-          id: "2"
+          id: "3"
         },
         4: {
           species: "Kojiman Solid Snake",
@@ -34,7 +33,5 @@ const initialState =
           inventory: 144,
           id: "4"
         }
-    }
-//     );
-// };
-export default initialState;
+    });
+};
