@@ -3,8 +3,6 @@ import Snake from "./Snake";
 import PropTypes from "prop-types";
 
 function SnakeList(props) {
-  // const { snake, onClickingRestock } = props;
-  
   return (
     <React.Fragment>
       <hr/>
@@ -20,7 +18,6 @@ function SnakeList(props) {
           id = {snake.id}
           key = {snake.id} />
         )}
-      {/* <button onClick = { () => onClickingRestock(snake.id) }>Restock</button> */}
     </React.Fragment>
   );
 }
@@ -28,7 +25,6 @@ function SnakeList(props) {
 SnakeList.propTypes = {
   snakelist: PropTypes.array,
   onSnakeSelection: PropTypes.func,
-  // onClickingRestock: PropTypes.func,
   onClickingBuy: PropTypes.func
 };
 
